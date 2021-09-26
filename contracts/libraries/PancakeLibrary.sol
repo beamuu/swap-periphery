@@ -1,6 +1,6 @@
 pragma solidity >=0.5.0;
 
-import '@uniswap/v2-core/contracts/interfaces/IPancakePair.sol';
+import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol';
 
 import "./SafeMath.sol";
 
@@ -29,7 +29,7 @@ library PancakeLibrary {
     function getReserves(address factory, address tokenA, address tokenB) internal view returns (uint reserveA, uint reserveB) {
         (address token0,) = sortTokens(tokenA, tokenB);
         pairFor(factory, tokenA, tokenB);
-        (uint reserve0, uint reserve1,) = IPancakePair(pairFor(factory, tokenA, tokenB)).getReserves();
+        (uint reserve0, uint reserve1,) = IUniswapV2Pair(pairFor(factory, tokenA, tokenB)).getReserves();
         (reserveA, reserveB) = tokenA == token0 ? (reserve0, reserve1) : (reserve1, reserve0);
     }
 
