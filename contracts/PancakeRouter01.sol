@@ -1,7 +1,7 @@
 pragma solidity =0.6.6;
 
-import '../../core/contracts/interfaces/IPancakeFactory.sol';
-import '../../core/contracts/interfaces/IPancakePair.sol';
+import './interfaces/IPancakeFactory.sol';
+import './interfaces/IPancakePair.sol';
 import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
 
 import './libraries/PancakeLibrary.sol';
