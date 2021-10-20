@@ -7,7 +7,7 @@ module.exports = async function (deployer) {
 
 
     // FOR TESTNET DEPLOYMENT
-    // weth = await WETH.at('')            // use WBNB instead
+    weth = await WETH.at('0x094616f0bdfb0b526bd735bf66eca0ad254ca81f')            // use WBNB instead
 
 
     // FOR LOCAL BLOCKCHAIN DEPLOYMENT
