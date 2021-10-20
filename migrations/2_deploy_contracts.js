@@ -1,9 +1,9 @@
 const Router = artifacts.require("PancakeRouter01.sol");
-const WETH = artifacts.require("WETH.sol")
+const WBNB = artifacts.require("WBNB.sol")
 
 module.exports = async function (deployer) {
     let weth;
-    const FACTORY_ADDRESS = '0x92d822D2aAE25a9C7D260b2B535690F04Cd32fd8';         // factory address here
+    const FACTORY_ADDRESS = '0x9f45793D732FCa933B57221FF1aCb559CacE96f5';         // factory address here
 
 
     // FOR TESTNET DEPLOYMENT
@@ -11,9 +11,9 @@ module.exports = async function (deployer) {
 
 
     // FOR LOCAL BLOCKCHAIN DEPLOYMENT
-    await deployer.deploy(WETH);
-    weth = await WETH.deployed();
+    await deployer.deploy(WBNB);
+    const wbnb = await WBNB.deployed();
 
 
-    await deployer.deploy(Router, FACTORY_ADDRESS, weth.address);
+    await deployer.deploy(Router, FACTORY_ADDRESS, wbnb.address);
 };
